@@ -11,7 +11,11 @@ mongoose
   .catch((err) => console.error("DB connection error:", err));
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "https://geeksenergy-frontend-6izc.vercel.app",
+  credentials: true,
+}
+));
 app.use(cookieParser());
 
 app.use(express.json()); // For parsing application/json
